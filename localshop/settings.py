@@ -189,13 +189,19 @@ class Base(Settings):
         'djcelery',
         'gunicorn',
         'widget_tweaks',
+        'rest_framework',
 
         'localshop',
         'localshop.apps.accounts',
+        'localshop.apps.api',
         'localshop.apps.dashboard',
         'localshop.apps.packages',
         'localshop.apps.permissions',
     ]
+
+    REST_FRAMEWORK = {
+        'DEFAULT_FILTER_BACKENDS': ('rest_framework.filters.DjangoFilterBackend',)
+    }
 
     # Auth settings
     AUTHENTICATION_BACKENDS = (
