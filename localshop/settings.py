@@ -179,8 +179,10 @@ class Base(Settings):
         'gunicorn',
         'userena',
         'guardian',
+        'rest_framework',
 
         'localshop',
+        'localshop.apps.api',
         'localshop.apps.packages',
         'localshop.apps.permissions',
     ]

@@ -38,4 +38,7 @@ urlpatterns = patterns('',
 
     url(r'^%s(?P<path>.*)$' % static_prefix,
         'django.contrib.staticfiles.views.serve', {'insecure': True}),
+
+    url(r'^api/',
+        include('localshop.apps.api.urls', namespace='api')),
 )
