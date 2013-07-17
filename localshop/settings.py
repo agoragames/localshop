@@ -194,6 +194,10 @@ class Base(Settings):
     except pkg_resources.DistributionNotFound:
         pass
 
+    REST_FRAMEWORK = {
+        'DEFAULT_FILTER_BACKENDS': ('rest_framework.filters.DjangoFilterBackend',)
+    }
+
     # Auth settings
     AUTHENTICATION_BACKENDS = (
         'userena.backends.UserenaAuthenticationBackend',

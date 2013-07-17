@@ -48,7 +48,7 @@ class ReleaseSerializer(serializers.ModelSerializer):
 class LocalReleasesViewset(CredentialRequiredMixin, viewsets.ReadOnlyModelViewSet):
     model = Release
     serializer_class = ReleaseSerializer
-    lookup_field = 'package__name'
+    filter_fields = ('package__name',)
 
     def get_queryset(self):
         return Release.objects.filter(package__is_local=True)
